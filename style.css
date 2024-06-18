@@ -5,12 +5,39 @@ body {
     background-color: #f0f0f0;
 }
 
+
 header {
     background-color: #333;
     color: #fff;
     text-align: center;
     padding: 1em 0;
 }
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+#biography, #works {
+    padding: 20px;
+    text-align: center;
+}
+
 
 main {
     padding: 20px;
@@ -31,7 +58,7 @@ section {
 }
 
 .gallery .row img {
-    margin: 85px;
+    margin: 10%;
     width: 35%;
     height: auto;
 }
