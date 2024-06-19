@@ -5,7 +5,6 @@ body {
     background-color: #f0f0f0;
 }
 
-
 header {
     background: #333;
     color: #fff;
@@ -38,7 +37,6 @@ nav ul li a:hover {
     text-align: center;
 }
 
-
 main {
     padding: 20px;
 }
@@ -59,15 +57,16 @@ section {
 
 .gallery .row img {
     margin: 10%;
-    width: auto;
+    width: 35%;
     max-width: 35%;
-    height: 100%;
+    height: auto; /* Изменено с 100% на auto */
+    vertical-align: middle; /* Центровка изображений по вертикали */
 }
 
 .gallery .row {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; /* Центровка изображений по вертикали */
     margin-bottom: 20px;
 }
 
