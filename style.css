@@ -59,13 +59,15 @@ section {
 
 .gallery .row img {
     margin: 10%;
-    width: 35%;
-    height: auto;
+    width: auto;
+    max-width: 35%;
+    height: 100%;
 }
 
 .gallery .row {
     display: flex;
     justify-content: center;
+    align-items: center;
     margin-bottom: 20px;
 }
 
@@ -81,4 +83,22 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
+}
+
+#scrollToTopBtn {
+    position: fixed;
+    bottom: 100px;
+    right: 20px;
+    z-index: 100;
+    display: none;
+    background-color: #333;
+    color: #f0f0f0;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#scrollToTopBtn:hover {
+    background-color: #555;
 }
