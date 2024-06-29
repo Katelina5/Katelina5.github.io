@@ -10,7 +10,7 @@ const firebaseConfig = {
 };
 
 firebase.initializeApp(firebaseConfig);
-const analytics = firebase.analytics ? firebase.analytics() : null;
+const analytics = firebase.analytics();
 
 let mybutton = document.getElementById("scrollToTopBtn");
 
