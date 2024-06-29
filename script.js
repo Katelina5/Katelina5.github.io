@@ -1,12 +1,10 @@
-// Your web app's Firebase configuration
 var firebaseConfig = {
-    apiKey: "AIzaSyAeIQI7-YLdcpz9j7dj84aMmLTP80W3R50",
-    authDomain: "test-625b9.firebaseapp.com",
-    projectId: "test-625b9",
-    storageBucket: "test-625b9.appspot.com",
-    messagingSenderId: "652111460325",
-    appId: "1:652111460325:web:5f0b319907429b6770a10c",
-    measurementId: "G-1BM530WDZ6"
+    apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+    authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+    projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+    storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+    messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+    appId: process.env.REACT_APP_FIREBASE_APP_ID
 };
 firebase.initializeApp(firebaseConfig);
 
@@ -27,13 +25,11 @@ function scrollToTop() {
     document.documentElement.scrollTop = 0;
 }
 
-// Function to dynamically add images to the gallery
 function loadImages() {
     const storage = firebase.storage();
     const storageRef = storage.ref();
     const gallery = document.getElementById('gallery');
 
-    // List all files in the storage bucket
     storageRef.listAll().then(function(result) {
         const images = result.items.map(item => item.getDownloadURL());
         return Promise.all(images);
@@ -55,5 +51,4 @@ function loadImages() {
     });
 }
 
-// Load images when the page loads
 window.onload = loadImages;
