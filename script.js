@@ -1,8 +1,3 @@
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-import { getStorage, ref, listAll, getDownloadURL } from "firebase/storage";
-
 // Initialize Firebase
 const firebaseConfig = {
     apiKey: window.env.FIREBASE_API_KEY,
@@ -14,8 +9,8 @@ const firebaseConfig = {
     measurementId: window.env.FIREBASE_MEASUREMENT_ID
 };
 
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+firebase.initializeApp(firebaseConfig);
+const analytics = firebase.analytics();
 
 let mybutton = document.getElementById("scrollToTopBtn");
 
@@ -36,13 +31,13 @@ function scrollToTop() {
 
 // Function to dynamically add images to the gallery
 function loadImages() {
-    const storage = getStorage(app);
-    const storageRef = ref(storage);
+    const storage = firebase.storage();
+    const storageRef = storage.ref();
     const gallery = document.getElementById('gallery');
 
     // List all files in the storage bucket
-    listAll(storageRef).then((result) => {
-        const images = result.items.map(item => getDownloadURL(item));
+    storageRef.listAll().then(function(result) {
+        const images = result.items.map(item => item.getDownloadURL());
         return Promise.all(images);
     }).then(urls => {
         let rowDiv;
