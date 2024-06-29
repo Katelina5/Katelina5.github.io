@@ -1,3 +1,4 @@
+// Initialize Firebase
 firebase.initializeApp({
     apiKey: window.env.FIREBASE_API_KEY,
     authDomain: window.env.FIREBASE_AUTH_DOMAIN,
@@ -24,11 +25,13 @@ function scrollToTop() {
     document.documentElement.scrollTop = 0;
 }
 
+// Function to dynamically add images to the gallery
 function loadImages() {
     const storage = firebase.storage();
     const storageRef = storage.ref();
     const gallery = document.getElementById('gallery');
 
+    // List all files in the storage bucket
     storageRef.listAll().then(function(result) {
         const images = result.items.map(item => item.getDownloadURL());
         return Promise.all(images);
@@ -50,4 +53,5 @@ function loadImages() {
     });
 }
 
+// Load images when the page loads
 window.onload = loadImages;
