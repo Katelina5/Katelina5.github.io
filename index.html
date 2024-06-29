@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-storage.js"></script>
+    <!-- Add env.js before script.js -->
+    <script src="env.js"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+    <header>
+        <h1>My Portfolio</h1>
+        <nav>
+            <ul>
+                <li><a href="#biography">Biography</a></li>
+                <li><a href="#works">Works</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="about">
+            <h2>Information about me.</h2>
+            <p>My name is Ekaterina. I'm a photographer and here are some of my works.</p>
+        </section>
+        <section id="works">
+            <h2>Works</h2>
+            <div class="gallery" id="gallery">
+                <!-- Images will be dynamically added here -->
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>tg: @</p>
+    </footer>
+    <button id="scrollToTopBtn" onclick="scrollToTop()">🡅</button>
+</body>
+</html>
