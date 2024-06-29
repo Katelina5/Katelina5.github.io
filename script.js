@@ -5,7 +5,8 @@ firebase.initializeApp({
     projectId: window.env.FIREBASE_PROJECT_ID,
     storageBucket: window.env.FIREBASE_STORAGE_BUCKET,
     messagingSenderId: window.env.FIREBASE_MESSAGING_SENDER_ID,
-    appId: window.env.FIREBASE_APP_ID
+    appId: window.env.FIREBASE_APP_ID,
+    measurementId: window.env.FIREBASE_MEASURMENT_ID
 });
 
 let mybutton = document.getElementById("scrollToTopBtn");
