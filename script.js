@@ -1,11 +1,13 @@
-firebase.initializeApp({
-    apiKey: process.env.FIREBASE_API_KEY,
-    authDomain: process.env.FIREBASE_AUTH_DOMAIN,
-    projectId: process.env.FIREBASE_PROJECT_ID,
-    storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
-    messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
-    appId: process.env.FIREBASE_APP_ID
-});
+var firebaseConfig = {
+    apiKey: "AIzaSyAeIQI7-YLdcpz9j7dj84aMmLTP80W3R50",
+    authDomain: "test-625b9.firebaseapp.com",
+    projectId: "test-625b9",
+    storageBucket: "test-625b9.appspot.com",
+    messagingSenderId: "652111460325",
+    appId: "1:652111460325:web:d9e111ec2ff0b31870a10c",
+    measurementId: "G-CFHNLMF97F"
+};
+firebase.initializeApp(firebaseConfig);
 
 let mybutton = document.getElementById("scrollToTopBtn");
 
