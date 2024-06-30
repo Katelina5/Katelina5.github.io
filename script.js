@@ -1,10 +1,4 @@
 // Initialize Firebase
-if (window.env) {
-  console.log('Environment variables loaded:', window.env);
-} else {
-  console.log('Environment variables not loaded.');
-}
-
 const firebaseConfig = {
     apiKey: window.env.FIREBASE_API_KEY,
     authDomain: window.env.FIREBASE_AUTH_DOMAIN,
