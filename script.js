@@ -26,11 +26,13 @@ function scrollToTop() {
     document.documentElement.scrollTop = 0;
 }
 
+// Function to dynamically add images to the gallery
 function loadImages() {
     const storage = firebase.storage();
     const storageRef = storage.ref();
     const gallery = document.getElementById('gallery');
 
+    // List all files in the storage bucket
     storageRef.listAll().then(function(result) {
         const images = result.items.map(item => item.getDownloadURL());
         return Promise.all(images);
